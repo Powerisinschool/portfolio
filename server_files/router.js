@@ -21,14 +21,16 @@ router.all('/', async (req, res) => {
     res.end();
 })
 
+router.all('/myip', async (req, res) => {
+    var myip = req.ip || null;
+    res.status(200).send(`<h1>Your ip address is: ${myip.toString()}</h1>`);
+    res.end();
+})
+
 // 404 Error Handling
 router.all('*', (req, res) => {
-    fs.readFile('errors/404.html', (err, data) => {
-        //console.log(`${req.url} is not found!`)
-        res.writeHead(404, {'Content-Type': 'text/html'})
-        res.write(data)
-        return res.end()
-    })
+    res.status(404).render('offline/404');
+    res.end();
 })
 
 module.exports = router
