@@ -36,4 +36,4 @@ app.set('view engine', 'ejs')
 const app = express();
 
 app.use('/', routes)
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+server.listen(PORT, () => console.log(`Listening on ${ PORT }`));
