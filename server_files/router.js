@@ -2,6 +2,7 @@ const url = require('url');
 const express = require('express')
 const path = require('path')
 const session = require('express-session')
+const bodyParser = require('body-parser')
 var router = express.Router()
 
 router.use(express.static(path.join(__dirname, 'public')))

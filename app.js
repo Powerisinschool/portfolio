@@ -4,9 +4,11 @@ const express = require('express');
 const path = require('path')
 const routes = require('./server_files/router')
 const PORT = process.env.PORT || 5000
-const server  = http.createServer(app);
 const appPackage = require('./package.json');
 const appVersion = appPackage.version;
+
+const app = express();
+const server  = http.createServer(app);
 
 console.log(appVersion);
 
@@ -32,8 +34,6 @@ function shouldCompress (req, res) {
 
 app.set('views', path.join(__dirname, 'pages'))
 app.set('view engine', 'ejs')
-
-const app = express();
 
 app.use('/', routes)
 server.listen(PORT, () => console.log(`Listening on ${ PORT }`));
