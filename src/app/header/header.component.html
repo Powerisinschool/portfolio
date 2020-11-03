@@ -1,0 +1,30 @@
+<a class="navbar-brand ml-auto" routerLink="/">TJO</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto nav-tabs" ngbNav>
+        <li class="nav-item" [ngbNavItem]="link.fragment" *ngFor="let link of links">
+            <a ngbNavLink routerLink="{{ link.link }}" routerLinkActive="active" [fragment]="link.fragment" class="nav-link">{{ link.title }}</a>
+        </li>
+        <!--<li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+        </li>-->
+        <li class="nav-item" ngbDropdown>
+            <a class="nav-link" tabindex="0" ngbDropdownToggle routerLink="/contact" id="navbarDropdown" role="button" routerLinkActive="active">
+                Contact
+            </a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a ngbDropdownItem href="https://wa.me/2347017971871" target="_blank">Whatsapp</a>
+                <a ngbDropdownItem href="https://facebook.com/iamhuman.tolu" target="_blank">Facebook</a>
+                <div class="dropdown-divider"></div>
+                <a ngbDropdownItem (click)="$event.preventDefault()" href="mailt">Mail</a>
+            </div>
+        </li>
+    </ul>
+    <span class="disabled mr-auto" tabindex="-1" aria-disabled="true">&copy; 2020</span>
+</div>
