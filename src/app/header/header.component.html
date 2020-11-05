@@ -1,32 +1,52 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand ml-auto" routerLink="/">TJO</a>
+<!--<nav class="navbar navbar-expand-lg navbar-light fixed-bottom">
+    <a class="navbar-brand ml-auto" routerLink="/">
+        <img src="/assets/minime.png" width="30" height="30" alt="" loading="lazy" style="border-radius:50%;border:none;" />
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-center ml-auto" id="navbarSupportedContent">
-        <ul class="navbar-nav nav-tabs" ngbNav>
-            <li class="nav-item" [ngbNavItem]="link.fragment" *ngFor="let link of links">
-                <a ngbNavLink routerLink="{{ link.link }}" routerLinkActive="active" [fragment]="link.fragment" class="nav-link">{{ link.title }}</a>
+        <ul class="navbar-nav" ngbNav>
+            <li class="nav-item user-select-none" [ngbNavItem]="link.fragment" *ngFor="let link of links">
+                <a ngbNavLink routerLink="{{ link.link }}" routerLinkActive="active" class="nav-link">{{ link.title }}</a>
             </li>
-            <!--<li class="nav-item">
-                <a class="nav-link" routerLink="/home" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
-            </li>-->
-            <li class="nav-item" ngbDropdown>
-                <a class="nav-link" tabindex="0" ngbDropdownToggle routerLink="/contact" id="navbarDropdown" role="button" routerLinkActive="active">
+            <li class="nav-item user-select-none dropup" ngbDropdown placement="top-left">
+                <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropup" role="button" routerLinkActive="active">
                     Contact
                 </a>
-                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a ngbDropdownItem href="https://wa.me/2347017971871" target="_blank">Whatsapp</a>
-                    <a ngbDropdownItem href="https://facebook.com/iamhuman.tolu" target="_blank">Facebook</a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropup">
+                    <a ngbDropdownItem href="https://wa.me/2347017971871" target="_new">Whatsapp</a>
+                    <a ngbDropdownItem href="https://facebook.com/iamhuman.tolu" target="_new">Facebook</a>
                     <div class="dropdown-divider"></div>
-                    <a ngbDropdownItem (click)="$event.preventDefault()" href="mailt">Mail</a>
+                    <a ngbDropdownItem (click)="$event.preventDefault()" href="mailt" target="_new">Mail</a>
                 </div>
             </li>
         </ul>
     </div>
-    <span class="disabled" tabindex="-1" aria-disabled="true">&copy; 2020</span>
-</nav>
+    <span class="user-select-none" tabindex="-1" aria-disabled="true">&copy; 2020</span>
+</nav>-->
+<div>
+    <nav class="navbar g-navbar navbar-expand-lg bg-white">
+        <div class="container-flex wide w-container navbar w-100">
+            <a routerLink="/" class="navbar-brand ml-auto w-nav-brand">
+                <div>✦&nbsp; Tolu Olagunju</div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end ml-auto" id="navbarSupportedContent">
+                <ul class="navbar-nav" ngbNav>
+                    <li class="user-select-none" [ngbNavItem]="link.fragment" *ngFor="let link of links">
+                        <a ngbNavLink routerLink="{{ link.link }}" routerLinkActive="w--current" class="nav-link w-nav-link">{{ link.title }}</a>
+                    </li>
+                </ul>
+                <!--<a href="/" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
+                <a href="/about" class="nav-link w-nav-link">About</a>
+                <a href="#" class="nav-link w-nav-link">Services</a>
+                <a href="#" class="nav-link w-nav-link">Blog</a>
+                <a href="#" class="nav-link w-nav-link">Contact</a>-->
+            </div>
+        </div>
+    </nav>
+</div>
