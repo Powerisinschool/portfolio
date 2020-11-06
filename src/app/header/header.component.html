@@ -27,26 +27,16 @@
     <span class="user-select-none" tabindex="-1" aria-disabled="true">&copy; 2020</span>
 </nav>-->
 <div>
-    <nav class="navbar g-navbar navbar-expand-lg bg-white">
-        <div class="container-flex wide w-container navbar w-100">
-            <a routerLink="/" class="navbar-brand ml-auto w-nav-brand">
+    <div class="g-navbar w-nav bg-white">
+        <div class="container-flex wide w-container">
+            <a href="/" class="brand w-nav-brand">
                 <div>✦&nbsp; Tolu Olagunju</div>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end ml-auto" id="navbarSupportedContent">
-                <ul class="navbar-nav" ngbNav>
-                    <li class="user-select-none" [ngbNavItem]="link.fragment" *ngFor="let link of links">
-                        <a ngbNavLink routerLink="{{ link.link }}" routerLinkActive="w--current" class="nav-link w-nav-link">{{ link.title }}</a>
-                    </li>
-                </ul>
-                <!--<a href="/" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
-                <a href="/about" class="nav-link w-nav-link">About</a>
-                <a href="#" class="nav-link w-nav-link">Services</a>
-                <a href="#" class="nav-link w-nav-link">Blog</a>
-                <a href="#" class="nav-link w-nav-link">Contact</a>-->
-            </div>
+            <nav role="navigation" class="nav-menu w-nav-menu">
+                <a routerLink="/home" routerLinkActive="w--current" class="nav-link w-nav-link">Home</a>
+                <a routerLink="/about" routerLinkActive="w--current" class="nav-link w-nav-link">About</a>
+                <a routerLink="/contact" routerLinkActive="w--current" class="nav-link w-nav-link">Contact</a>
+            </nav>
         </div>
-    </nav>
+    </div>
 </div>
