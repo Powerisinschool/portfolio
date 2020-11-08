@@ -473,7 +473,6 @@ a:active, a:hover {
     text-transform: inherit;
     list-style-type: disc;
     text-shadow: none;
-    vertical-align: baseline;
     cursor: inherit;
     white-space: inherit;
     word-break: normal;
@@ -560,4 +559,54 @@ a {
     margin-top: 0px;
     margin-bottom: 24px;
     font-size: 1em;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translate3d(-100px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+    }
+}
+
+@keyframes fadeinup {
+    from {
+        opacity: 0;
+        transform: translate3d(0px, 100px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+    }
+}
+
+.initial-fade {
+    opacity: 0;
+}
+
+.fade-in {
+    animation-name: fadein !important;
+    animation-duration: 1s !important;
+    animation-timing-function: ease-in !important;
+    animation-direction: normal !important;
+}
+
+.fade-in-up {
+    animation-name: fadeinup !important;
+    animation-duration: 1s !important;
+    animation-timing-function: ease-in !important;
+    animation-direction: normal !important;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translate3d(-100px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
 }
