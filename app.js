@@ -35,9 +35,9 @@ app.get('/.well-known/brave-rewards-verification.txt', function(req, res) {
     res.sendFile('brave-rewards-verification.txt', {root: `.well-known`});
 });
 
-app.get('/*', function(req, res) {
+/*app.get('/*', function(req, res) {
     res.sendFile('index.html', {root: `dist/${packageName}/`});
-});
+});*/
 
 const PORT = process.env.PORT || 8080;
 
