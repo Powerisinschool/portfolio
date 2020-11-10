@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: tojo-portfolio.herokuapp.com
+Token: de5ee37b418a8cf400b674c6a258c0e8cb3e77cb0b69214ffb465a9a53b3bd4e
