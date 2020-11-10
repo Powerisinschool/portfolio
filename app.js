@@ -29,10 +29,7 @@ const forceSSL = function() {
 app.use(forceSSL());
 
 app.use(express.static(`${__dirname}/dist/${packageName}`));
-
-app.get('/.well-known/brave-rewards-verification.txt', function(req, res) {
-    res.sendFile('brave-rewards-verification.txt', {root : `.well-known/`});
-});
+app.use('/.well-known/brave-rewards-verification.txt', express.static(`${__dirname}/brave-rewards-verification.txt`));
 
 app.get('/*', function(req, res) {
     res.sendFile('index.html', {root: `dist/${packageName}/`});
